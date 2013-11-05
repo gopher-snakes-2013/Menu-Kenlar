@@ -1,4 +1,4 @@
-class MenuController < ApplicationController
+class MenusController < ApplicationController
   def index
     @menu = Menu.new
   end

@@ -33,7 +33,7 @@ group :doc do
 end
 
 group :development do
-  gem 'better-errors'
+  gem 'better_errors'
 end
 
 group :test, :development do
