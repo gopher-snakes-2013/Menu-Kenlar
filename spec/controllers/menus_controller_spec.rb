@@ -2,12 +2,19 @@ require 'spec_helper'
 
 describe MenusController do
 
-  describe "home page" do
-    it "assigns @menus" do
-      get :index
-      response.status.should eq 200
-      # expect(assigns(:menus)).to eq(Menu.all)
+  it "assigns @menus" do
+    get :index
+    expect(assigns(:menus)).to eq(Menu.all)
     end
-  end
 
+    context "#create" do
+      it "can create a new menu when provided valid params" do
+        expect {
+          post :create, menu: {name: "DERP"}}.to change(Menu, :count).by(1)
+      end
+      it "should show not create a new menu when provided invalid params" do
+        expect {
+          post :create, menu: {}}.to_not change(Menu, :count)
+      end
+  end
 end
