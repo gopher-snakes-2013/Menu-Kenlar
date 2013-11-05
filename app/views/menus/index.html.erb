@@ -9,6 +9,7 @@
 <ul>
 <% @menus.each do |menu| %>
 <li><%= menu.name %></li>
+<%= link_to "details", menu_path(menu.id) %>
 <% end %>
 </ul>
 

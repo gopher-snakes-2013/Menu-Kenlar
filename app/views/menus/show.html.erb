@@ -1,0 +1,11 @@
+<%= @menu.name %>
+<% @items.each do |item| %>
+<%= item.name %>
+<%= item.price %>
+<% end  %>
+
+<%= form_for [@menu, @item] do |f| %>
+<%= f.text_field :name, placeholder: "Item Name" %>
+<%= f.text_field :price, placeholder: "Item Price" %>
+<%= f.submit %>
+<% end %>

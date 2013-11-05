@@ -14,4 +14,10 @@ class MenusController < ApplicationController
       redirect_to '/'
     end
   end
+
+  def show
+    @menu = Menu.find(params[:id])
+    @item = Item.new
+    @items = Item.where(menu_id: params[:id])
+  end
 end
