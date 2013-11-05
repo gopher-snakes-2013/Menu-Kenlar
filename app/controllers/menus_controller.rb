@@ -8,8 +8,10 @@ class MenusController < ApplicationController
     @menu = Menu.new
     @menu.name = params[:menu][:name]
     if @menu.save
+      redirect_to '/'
     else
-      @menu.errors[:name]
+      flash[:error] = @menu.errors[:name][0]
+      redirect_to '/'
     end
   end
 end

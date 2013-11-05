@@ -34,11 +34,14 @@ end
 
 group :development do
   gem 'better_errors'
+  gem 'quiet_assets'
 end
 
 group :test, :development do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'factory_girl_rails'
 end
 
 # Use ActiveModel has_secure_password
