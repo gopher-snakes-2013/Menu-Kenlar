@@ -1,15 +1,8 @@
 <h1> welcome to derpy menus</h1>
 <%= flash[:error] %>
 
-<%= form_for @menu do |f| %>
-<%= f.text_field :name %>
-<%= f.submit "Add Menu" %>
-<% end %>
+<%= render 'addmenuform', menu: @menu  %>
 
-<ul>
-<% @menus.each do |menu| %>
-<li><%= menu.name %></li>
-<%= link_to "details", menu_path(menu.id) %>
-<% end %>
-</ul>
+<%= render 'allmenus', menus: @menus %>
+
 
