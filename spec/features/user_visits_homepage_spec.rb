@@ -26,4 +26,5 @@ describe "User" do
     click_on "details"
     expect(page).to have_content "shit"
   end
+
 end
